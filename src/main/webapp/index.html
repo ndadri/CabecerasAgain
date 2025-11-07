@@ -8,9 +8,13 @@
 <h1>MANEJO DE CABECERAS</h1>
 <a href="cabeceras-request">Ir al servlet</a>
 <br>
-<a href="productos.xls">XLS</a>
-<br>
-<a href="productos.json">JSON</a>
-
+<div id="tablaProductos"></div>
+<script>
+    fetch('productos.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('tablaProductos').innerHTML = data;
+        })
+</script>
 </body>
 </html>

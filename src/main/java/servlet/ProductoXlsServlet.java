@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 //Implementamos la anotación
-@WebServlet("/productos.xls")
+@WebServlet({"/productos.xls", "/productos.html"})
 public class ProductoXlsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,7 +40,7 @@ public class ProductoXlsServlet extends HttpServlet {
                 out.println("<body>");
                 out.println("<h1>Listado de productos</h1>");
                 out.println("<p><a href=\"" + req.getContextPath() + "/productos.xls" + "\">exportar a excel</a></p>");
-                out.println("<p><a href=\"" + req.getContextPath() + "/productojson" + "\">mostrar json</a></p>");
+                out.println("<p><a href=\"" + req.getContextPath() + "/productos.json" + "\">mostrar json</a></p>");
             }
 
             out.println("<table>");
