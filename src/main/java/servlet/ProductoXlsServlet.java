@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 //Implementamos la anotación
-@WebServlet({"/productos.xls","/productos.html"})
+@WebServlet("/productos.xls")
 public class ProductoXlsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
