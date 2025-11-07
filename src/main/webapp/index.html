@@ -1,3 +1,11 @@
+<!--
+
+NOMBRE: Adrian Falcones
+CURSO: Tercero de Desarrollo de Sotfware
+FECHA: 06/nov./2025
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +16,22 @@
 <h1>MANEJO DE CABECERAS</h1>
 <a href="cabeceras-request">Ir al servlet</a>
 <br>
+
 <div id="tablaProductos"></div>
 <script>
+    // Inicia un bloque de JavaScript para realizar operaciones asíncronas
+
+    // fetch('productos.html'): Inicia una petición asíncrona (AJAX) al Servlet mapeado como /productos.html
+    //    Este Servlet devuelve el fragmento HTML que contiene la tabla de productos.
     fetch('productos.html')
+        // .then(response => response.text()): Cuando la respuesta del servidor llega,
+        //    se lee el cuerpo de la respuesta como texto plano (el código HTML de la tabla).
         .then(response => response.text())
+        // .then(data => { ... }): Una vez que el texto (HTML) está disponible en la variable 'data'
         .then(data => {
+            // document.getElementById('tablaProductos'): Selecciona el elemento DIV por su ID
+            // .innerHTML = data: Inserta el contenido HTML obtenido ('data') dentro del DIV.
+            // Esto renderiza la tabla de productos en la página principal después de que se ha cargado.
             document.getElementById('tablaProductos').innerHTML = data;
         })
 </script>
